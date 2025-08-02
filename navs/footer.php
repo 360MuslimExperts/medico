@@ -22,8 +22,8 @@
     </div>
     <p>&copy; <?php echo date("Y"); ?> |
       <a href="https://360muslimexperts.com" aria-label="Visit 360 Muslim Experts website" class="footer-link">360 Muslim Experts</a> |
-      <a href="https://ibt.360muslimexperts.com" target="_blank" aria-label="Made by IBTech" class="footer-link">Made by Ibtech</a>
-    </p>
+       | Made by 
+<a href="https://salamprojects.github.io/" target="_blank" aria-label="Made by Salam Projects" class="footer-link">Salam Projects</a>
     <div class="back-to-top">
       <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="btn btn--secondary">Back to Top</button>
     </div>
