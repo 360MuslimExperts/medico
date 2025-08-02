@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="container">
     <a href="/index.php" class="logo-link" aria-label="Go to homepage">
-      <img src="https://360muslimexperts.com/assets/logo-300.png" alt="Logo" class="logo" width="50" height="50" loading="lazy" />
+      <img src="https://360muslimexperts.com/assets/medico-logo-300.png" alt="Logo" class="logo" width="50" height="50" loading="lazy" />
       <span class="site-title">Medico 360</span>
     </a>
 
