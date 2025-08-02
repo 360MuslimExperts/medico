@@ -1,0 +1,427 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Define core variables */
+:root {
+  --clr-dark-background: #0d1321;
+  --clr-text-light: #ffffff;
+  --clr-accent-hover: #0b8fac;
+  --clr-navbar-mobile-bg: #111a2c;
+  --clr-border-light: #eeeeee;
+  --clr-accent: #ffc107;
+  --clr-dark: #343a40;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+
+  /* Border Radius */
+  --border-radius: 8px;
+
+  /* Transition Speed */
+  --transition-speed: 0.3s;
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply global font (Optional, but recommended for consistency if the rest of the site uses it) */
+body {
+  font-family: 'Poppins', sans-serif;
+  /* You might want to adjust these body styles based on the target site's theme */
+  /* color: var(--clr-text-light); */
+  /* background-color: var(--clr-dark-background); */
+}
+
+/* ----- HEADER ----- */
+.site-header {
+  background-color: var(--clr-dark-background);
+  color: var(--clr-text-light);
+  padding: var(--spacing-sm) 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-md);
+  max-width: 1200px; /* Adjust max-width if needed for the new site */
+  margin: 0 auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--clr-text-light);
+  flex-shrink: 0;
+}
+
+.logo {
+  margin-right: 0.5rem;
+  /* Ensure you have the logo image path correct in your HTML */
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ----- NAVBAR (Desktop) ----- */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--clr-text-light);
+  font-weight: 500;
+  padding: var(--spacing-sm) 0;
+  position: relative;
+  transition: color var(--transition-speed), border-bottom-color var(--transition-speed);
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: var(--clr-accent-hover);
+  border-bottom: 2px solid var(--clr-accent-hover); /* Add underline effect */
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid var(--clr-accent-hover);
+  outline-offset: 4px;
+}
+
+.navbar a.active {
+  font-weight: bold;
+  color: var(--clr-accent-hover);
+  border-bottom: 2px solid var(--clr-accent-hover);
+}
+
+/* ----- HAMBURGER MENU ----- */
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.hamburger {
+  display: none; /* Hidden by default, shown in media query */
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  gap: 5px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none; /* Remove default outline */
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--clr-accent-hover);
+  outline-offset: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--clr-text-light);
+  border-radius: 2px;
+  transition: all var(--transition-speed);
+}
+
+/* Hamburger animation when checked */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Add overlay for mobile menu */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.menu-toggle:checked ~ .menu-overlay {
+  display: block;
+  cursor: pointer; /* Allow users to click the overlay to close the menu */
+}
+
+/* ----- FOOTER ----- */
+.site-footer {
+  background-color: #111; /* Slightly different from header bg */
+  color: var(--clr-text-light); /* Use light text */
+  padding: var(--spacing-lg) 0; /* Use variable padding */
+  text-align: center;
+}
+
+/* Footer Links */
+.footer-links {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: var(--spacing-lg);
+}
+
+.footer-links a {
+  color: var(--clr-text-light);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color var(--transition-speed);
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--clr-accent-hover);
+  text-decoration: underline; /* Add underline on hover/focus */
+}
+
+/* Social Media Icons */
+.footer-social {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-social a {
+  margin: 0 var(--spacing-sm);
+  display: inline-block; /* Ensures proper spacing and hover effect */
+  transition: transform var(--transition-speed);
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+  transform: scale(1.1);
+}
+
+.footer-social a img {
+  /* Assuming images are used for icons */
+  vertical-align: middle; /* Align icons nicely */
+  /* Add width/height if needed */
+}
+
+/* === NEWSLETTER FORM === */
+.newsletter {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius); /* Keep subtle rounded corners */
+}
+
+.newsletter h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--clr-text-light); /* Ensure text matches the footer theme */
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.newsletter input[type="email"] { /* Be more specific */
+  padding: var(--spacing-sm);
+  border: 1px solid var(--clr-border-light);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  width: 250px;
+  max-width: 100%; /* Ensure it fits smaller screens */
+  background-color: #fff; /* Ensure input is visible on dark bg */
+  color: var(--clr-dark); /* Ensure text is visible */
+}
+
+.newsletter button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  background-color: var(--clr-accent);
+  color: var(--clr-dark);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  font-weight: 600; /* Make button text bolder */
+}
+
+.newsletter button:hover {
+  background-color: #ffcd38; /* Slightly lighter accent */
+  transform: translateY(-2px);
+}
+
+.newsletter button:active {
+  transform: translateY(0);
+}
+
+/* Footer Copyright/Attribution */
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem; /* Slightly smaller text */
+  color: rgba(255, 255, 255, 0.7); /* Lighter text for copyright */
+}
+
+.site-footer p a { /* Style links within the copyright paragraph */
+  color: var(--clr-accent-hover); /* Use accent color for links */
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.site-footer p a:hover,
+.site-footer p a:focus {
+  color: var(--clr-accent-hover);
+  text-decoration: underline;
+}
+
+
+/* ----- RESPONSIVE LAYOUT (Mobile Menu) ----- */
+@media (max-width: 768px) {
+  .site-header .container {
+    /* Adjust container padding for smaller screens if needed */
+    /* padding: 0 var(--spacing-sm); */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  .navbar {
+    display: block; /* Override display:flex */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px; /* Adjust width as needed */
+    height: 100vh;
+    background-color: var(--clr-navbar-mobile-bg);
+    padding-top: calc(var(--spacing-lg) * 2); /* Space for close button/logo */
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform var(--transition-speed) ease-in-out; /* Smoother transition */
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling if menu is long */
+  }
+
+  /* When the menu toggle is checked, slide in the navbar */
+  .menu-toggle:checked ~ .navbar {
+    transform: translateX(0);
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0; /* Remove desktop gap */
+    align-items: center; /* Center items */
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator */
+  }
+
+  .navbar li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar a {
+    display: block; /* Make links full width */
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--clr-text-light);
+    border-bottom: none; /* Remove desktop underline effect */
+  }
+
+  .navbar a:hover,
+  .navbar a:focus {
+    background-color: var(--clr-accent-hover);
+    color: var(--clr-dark-background); /* Change text color on hover */
+    border-bottom: none; /* Ensure no underline on hover */
+  }
+
+  .navbar a.active {
+     background-color: var(--clr-accent-hover); /* Highlight active link */
+     color: var(--clr-dark-background);
+     font-weight: bold;
+     border-bottom: none;
+  }
+
+  /* Responsive Footer Adjustments */
+  .footer-links ul {
+    gap: var(--spacing-md); /* Reduce gap between footer links */
+  }
+
+  .newsletter form {
+    flex-direction: column; /* Stack input and button */
+    align-items: center; /* Center items vertically */
+  }
+
+  .newsletter input[type="email"] {
+    width: 90%; /* Make input wider */
+    max-width: 300px; /* Limit max width */
+  }
+
+  .newsletter button {
+    width: 90%; /* Make button wider */
+    max-width: 300px; /* Limit max width */
+  }
+}
+/* === BACK TO TOP BUTTON === */
+.back-to-top {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+.back-to-top .btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.back-to-top .btn:hover {
+  background-color: var(--clr-primary-dark);
+  transform: translateY(-2px);
+}
+
+.back-to-top .btn:active {
+  transform: translateY(0);
+}
