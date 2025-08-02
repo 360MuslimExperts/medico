@@ -1,11 +1,11 @@
 <footer class="site-footer">
-    <div class="newsletter">
+    <!-- <div class="newsletter">
       <h3>Subscribe to our Newsletter</h3>
       <form action="subscribe.php" method="POST">
         <input type="email" name="email" placeholder="Enter your email" required>
         <button type="submit" class="btn btn--primary">Subscribe</button>
       </form>
-    </div>
+    </div> -->
     <div class="footer-social">
       <a href="https://www.facebook.com/360medico/" target="_blank" aria-label="Visit our Facebook page">
         <img src="https://cdn.simpleicons.org/facebook/ffffff" alt="Facebook Logo" width="24" height="24" loading="lazy">
