@@ -19,7 +19,7 @@
     <nav class="navbar" id="navbar-menu" role="navigation" aria-label="Main navigation">
       <ul>
         <li><a href="/" class="<?php echo basename($_SERVER['PHP_SELF']) === 'index.php' ? 'active' : ''; ?>" aria-current="<?php echo basename($_SERVER['PHP_SELF']) === 'index.php' ? 'page' : 'false'; ?>">Home</a></li>
-        <li><a href="/blog" class="<?php echo basename($_SERVER['PHP_SELF']) === '/blog' ? 'active' : ''; ?>" aria-current="<?php echo basename($_SERVER['PHP_SELF']) === '/blog' ? 'page' : 'false'; ?>">Blog</a></li>
+         <a href="/blog" class="<?php echo isActive('/blog'); ?>" <?php if (isActive('/blog')) echo 'aria-current="page"'; ?>>blog</a></li>
         <li><a href="/ask.php" class="<?php echo basename($_SERVER['PHP_SELF']) === 'ask.php' ? 'active' : ''; ?>" aria-current="<?php echo basename($_SERVER['PHP_SELF']) === 'ask.php' ? 'page' : 'false'; ?>">Ask Medico</a></li>
         <li><a href="/about.html" class="<?php echo basename($_SERVER['PHP_SELF']) === 'about.html' ? 'active' : ''; ?>" aria-current="<?php echo basename($_SERVER['PHP_SELF']) === 'about.html' ? 'page' : 'false'; ?>">About</a></li>
         <li><a href="/contact.html" class="<?php echo basename($_SERVER['PHP_SELF']) === 'contact.html' ? 'active' : ''; ?>" aria-current="<?php echo basename($_SERVER['PHP_SELF']) === 'contact.html' ? 'page' : 'false'; ?>">Contact</a></li>
